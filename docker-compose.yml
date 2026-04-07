@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  traffic-app:
+    build: .
+    container_name: traffic-dl-container
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
